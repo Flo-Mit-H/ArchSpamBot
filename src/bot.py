@@ -3,6 +3,7 @@ import json
 import logging
 import os
 
+import discord
 from discord.ext import commands
 
 # Initialize and Read the Config File
@@ -15,7 +16,7 @@ if not os.path.isfile("../config/config.json"):
 config = json.load(open("../config/config.json"))
 
 # Initialize Bot Instance
-bot = commands.Bot(command_prefix=config["prefix"])
+bot = commands.Bot(command_prefix=config["prefix"], activity=discord.Activity(type=discord.ActivityType.listening, name="your linux messages"))
 
 
 class Application:
@@ -24,7 +25,7 @@ class Application:
     ]
 
     def __init__(self, discord_bot, bot_token):
-        self.bot = discord_bot
+        self.bot: commands.Bot = discord_bot
         self.logger = logging.getLogger("main")
         self.logger.setLevel(logging.DEBUG if config["debug"] else logging.INFO)
 
