@@ -131,5 +131,3 @@ dmypy.json
 ### Own Ignores
 # Bot Token - Should alawys be hidden from public
 token.txt
-# The Stuff I do in School
-school/
