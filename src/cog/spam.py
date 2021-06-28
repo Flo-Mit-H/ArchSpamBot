@@ -19,7 +19,7 @@ class Spam(commands.Cog):
         for word in config["spam"]:
             if word in message.content:
                 await message.add_reaction(config["arch-emoji"])
-                await message.channel.send("Bloeckchengrafik#0420 uses arch btw")
+                await message.channel.send(config["trigger-message"])
                 return
 
 
