@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+### Own Ignores
+# Bot Token - Should alawys be hidden from public
+token.txt
